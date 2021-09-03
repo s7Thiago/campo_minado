@@ -23,21 +23,49 @@ class _CampoMinadoAppState extends State<CampoMinadoApp> {
 
   void _reiniciar() {
     print('reiniciar...');
+    setState(() {
+      _venceu = null;
+      _tabuleiro.reiniciar();
+    });
   }
 
   void _abrir(Campo c) {
+    // Para evitar que o usuário possa continuar jogando após uma explosão, verifica-se se o
+    // status de vitória já foi definido na partida.
+    if (_venceu != null) return;
+
     print('(${c.linha}, ${c.coluna}) => abrir...');
+
     setState(() {
       try {
         c.abrir();
-      } on ExplosaoException {}
+
+        // Se o tabuleiro estiver resolvido após o usuário abrir um campo, significa que ele venceu
+        if (_tabuleiro.resolvido) {
+          _venceu = true;
+        }
+      } on ExplosaoException {
+        // Se o usuário clicou em uma bomba, significa que o jogo acabou, e as bombas podem ser reveladas
+        _venceu = false;
+        _tabuleiro.revelarBombas();
+      }
     });
   }
 
   void _alternarMarcacao(Campo c) {
+    // Para evitar que o usuário possa continuar jogando após uma explosão, verifica-se se o
+    // status de vitória já foi definido na partida.
+    if (_venceu != null) return;
+
     print('(${c.linha}, ${c.coluna}) => alternar marcação...');
+
     setState(() {
       c.alternarMarcacao();
+
+      // Se o tabuleiro estiver resolvido após o usuário alternar a marcação de um campo, significa que ele venceu
+      if (_tabuleiro.resolvido) {
+        _venceu = true;
+      }
     });
   }
 
