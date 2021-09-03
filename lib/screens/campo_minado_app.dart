@@ -27,6 +27,11 @@ class _CampoMinadoAppState extends State<CampoMinadoApp> {
 
   void _abrir(Campo c) {
     print('(${c.linha}, ${c.coluna}) => abrir...');
+    setState(() {
+      try {
+        c.abrir();
+      } on ExplosaoException {}
+    });
   }
 
   void _alternarMarcacao(Campo c) {
