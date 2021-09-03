@@ -72,6 +72,6 @@ class Tabuleiro {
 
   // Retorna verdadeiro se todos os campos do tabuleiro estiverem resolvidos
   // Retorna falso caso contrário
-  bool get resulvido => _campos.every((c) => c.resolvido);
+  bool get resolvido => _campos.every((c) => c.resolvido);
   
 }
