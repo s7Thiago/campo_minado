@@ -36,6 +36,9 @@ class _CampoMinadoAppState extends State<CampoMinadoApp> {
 
   void _alternarMarcacao(Campo c) {
     print('(${c.linha}, ${c.coluna}) => alternar marcação...');
+    setState(() {
+      c.alternarMarcacao();
+    });
   }
 
   @override
