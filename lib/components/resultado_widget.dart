@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
-  final bool venceu;
+  final bool? venceu;
   final Function() onRestart;
 
   const ResultadoWidget({
     Key? key,
-    required this.venceu,
+    this.venceu,
     required this.onRestart,
   }) : super(key: key);
 
@@ -16,7 +16,7 @@ class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
   _getColor() {
     if (venceu == null) {
       return Colors.amber;
-    } else if (venceu) {
+    } else if (venceu!) {
       return Colors.green;
     } else {
       return Colors.red[300];
@@ -26,7 +26,7 @@ class ResultadoWidget extends StatelessWidget implements PreferredSizeWidget {
   _getIcon() {
     if (venceu == null) {
       return Icons.sentiment_satisfied;
-    } else if (venceu) {
+    } else if (venceu!) {
       return Icons.sentiment_very_satisfied;
     } else {
       Colors.red[300];
