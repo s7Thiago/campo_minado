@@ -70,6 +70,7 @@ flutter:
     - assets/images/aberto_8.jpeg
     - assets/images/bomba_0.jpeg
     - assets/images/bomba_1.jpeg
+    - assets/images/bandeira.jpeg
     - assets/images/fechado.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
