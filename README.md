@@ -1,6 +1,46 @@
-# campo_minado
+# Mined Field
 
-A new Flutter project.
+A Game developed with Flutter framework to train the implementation of features described on Features section.
+
+## Project Status
+
+This project is just a personal showcase, done with de aim of  register what i have studied, and show my skills. It may receives improvements in the future.
+
+## Features in this project
+
+ - [x] Widget composition
+ - [x] External image assets to compose the game UI
+ - [x] State management setState
+ - [x] Unitary tests for field class
+ - [x] Unitary tests for result class
+ - [x] Unitary tests for board class
+
+
+
+## Project features preview
+
+| Playing |
+| ------------------------------------------------------ |
+| ![](assets/images/shots/playing.gif) |
+
+##
+## Installation and Setup Instructions
+
+Clone down this repository. You will need `Flutter` and `Dart` installed globally on your machine.
+
+Installation:
+
+`flutter pub get install` on the project root.
+
+To Run the android application:
+
+`flutter run -d <device or emulator id>`
+
+To build a android release:
+
+`flutter build apk` the package will be generated on **./build/app/outputs/flutter-apk/app-release.apk**
+
+
 
 ## Getting Started
 
