@@ -21,13 +21,17 @@ class Tabuleiro {
 
   // Faz um reset em cada um dos campos
   void reiniciar() {
-    _campos.forEach((c) => c.reiniciar());
+    for (var c in _campos) {
+      c.reiniciar();
+    }
     _sortearMinas();
   }
 
   // Mostra todas as bombas no tabuleiro
   void revelarBombas() {
-    _campos.forEach((c) => c.revelarBomba());
+    for (var c in _campos) {
+      c.revelarBomba();
+    }
   }
 
   // Usa a quantidade de linhas e colunas para criar os campos e atribuir as posições a cada um

@@ -66,14 +66,14 @@ class _CampoMinadoAppState extends State<CampoMinadoApp> {
 
   Tabuleiro _getTabuleiro(double largura, double altura) {
     if (_tabuleiro == null) {
-      int qtdeColunas = 15;
+      int qtdeColunas = 30;
       double tamanhoCampo = largura / qtdeColunas;
       int qtdeLinhas = (altura / tamanhoCampo).floor();
 
       _tabuleiro = Tabuleiro(
         linhas: qtdeLinhas,
         colunas: qtdeColunas,
-        qtdeBombas: 15,
+        qtdeBombas: 50,
       );
     }
     return _tabuleiro!;
@@ -83,7 +83,7 @@ class _CampoMinadoAppState extends State<CampoMinadoApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: ResultadoWidget(venceu: _venceu, onRestart: _reiniciar),
+        appBar: ResultadoWidget(tabuleiro: _tabuleiro, venceu: _venceu, onRestart: _reiniciar),
         body: Container(
           color: Colors.grey,
           child: LayoutBuilder(builder: (context, constraints) {
